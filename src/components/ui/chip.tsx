@@ -2,16 +2,15 @@ import { cn } from '@/lib/utils'
 import { TiArrowSortedUp } from 'react-icons/ti'
 import { TiArrowSortedDown } from 'react-icons/ti'
 type ChipProps = {
-  variant: 'progress' | 'decline'
   percentage: number
   className?: string
 }
 
-const Chip = ({
-  className = '',
-  variant = 'progress',
-  percentage,
-}: ChipProps) => {
+const Chip = ({ className = '', percentage }: ChipProps) => {
+  let variant: 'progress' | 'decline' = 'progress'
+  if (percentage < 0) {
+    variant = 'decline'
+  }
   const arrowJSX = () => {
     if (variant === 'progress') {
       return <TiArrowSortedUp />
@@ -34,7 +33,7 @@ const Chip = ({
       )}
     >
       <div>{arrowJSX()}</div>
-      <div>{`${percentage}%`}</div>
+      <div>{`${Math.abs(percentage).toFixed(2)}%`}</div>
     </div>
   )
 }

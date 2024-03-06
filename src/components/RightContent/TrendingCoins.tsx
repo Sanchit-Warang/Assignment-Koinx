@@ -33,10 +33,6 @@ const TrendingCoins = ({ className = '' }: TrendingCoinsProps) => {
 }
 
 const CoinItem = ({ coin }: { coin: Coin }) => {
-  let variant: 'progress' | 'decline' = 'progress'
-  if (coin.item.data.price_change_percentage_24h['usd'] < 0) {
-    variant = 'decline'
-  }
   return (
     <div className="flex items-center my-4 gap-2">
       <img src={coin.item.small} className="w-10 h-10" />
@@ -44,10 +40,7 @@ const CoinItem = ({ coin }: { coin: Coin }) => {
         {coin.item.name} ({coin.item.symbol})
       </p>
       <Chip
-        variant={variant}
-        percentage={Number(
-          Math.abs(coin.item.data.price_change_percentage_24h['usd']).toFixed(2)
-        )}
+        percentage={coin.item.data.price_change_percentage_24h['usd']}
         className="ml-auto"
       ></Chip>
     </div>
