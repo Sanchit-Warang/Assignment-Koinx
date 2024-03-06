@@ -2,4 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.light {
+  --borderr: 222, 223, 226;
+  --background: 240, 244, 244;
+}
