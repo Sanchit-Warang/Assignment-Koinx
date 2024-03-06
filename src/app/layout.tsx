@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} light bg-background `}>
         <Providers>
           <NavBar />
-          <div className="mx-10  my-2 grid grid-cols-1  md:grid-cols-7  gap-4">
+          <div className="mx-10  my-2 grid grid-cols-1  md:grid-cols-7  gap-4 ">
             <div className="col-span-1 md:col-span-5">{children}</div>
             <div className="md:mt-10 col-span-1 md:col-span-2 space-y-4">
               <GetStartedCard />
