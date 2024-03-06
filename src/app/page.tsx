@@ -1,14 +1,4 @@
-import Card from '@/components/ui/card'
+import CoinDetails from '@/components/CoinDetails'
 export default function Home() {
-  return (
-    <>
-      <div className="my-2">
-        <span className="text-sm text-[#3E5765]">
-          {'Cryptocurrencies >> '}
-          <span className="text-black text-medium">Bitcoin</span>
-        </span>
-      </div>
-      <Card> this is Card</Card>
-    </>
-  )
+  return <CoinDetails />
 }
