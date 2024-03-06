@@ -4,6 +4,7 @@ import useGetCoinDetailsQuery from '@/hooks/useGetCoinDetailsQuery'
 import TradingViewWidget from './Graphs/TradingViewWidget'
 import { useState } from 'react'
 import Chip from './ui/chip'
+import Tabs from './Tabs/Tabs'
 
 type Props = {
   id?: string
@@ -128,7 +129,7 @@ const CoinDetails = ({ id = 'bitcoin' }: Props) => {
         </span>
       </div>
       <Card>{cardDetailsJSX()}</Card>
-      
+      {coinDetails.data && <Tabs coin={coinDetails.data} />}
     </>
   )
 }

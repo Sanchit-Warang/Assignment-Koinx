@@ -7,7 +7,7 @@ function TradingViewWidget({
   symbol,
   interval = '24H',
   className = '',
-  h = '50vh',
+  h = '40vh',
   w = '100%',
 }) {
   const container = useRef()

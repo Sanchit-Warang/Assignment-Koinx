@@ -12,3 +12,21 @@
   --borderr: 222, 223, 226;
   --background: 240, 244, 244;
 }
+
+/* Default font size */
+html {
+  font-size: 16px;
+}
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 16px;
+  }
+}
