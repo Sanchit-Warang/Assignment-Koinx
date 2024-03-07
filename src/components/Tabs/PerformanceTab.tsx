@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { formatDateWithApproxYears } from '@/lib/utils'
 const PerformanceTab = ({ coin }: { coin: CryptoData }) => {
   return (
-    <Card className="mt-5 space-y-5">
+    <Card className="mt-5 space-y-5 animate-in slide-in-from-left duration-300">
       <p className="font-semibold text-2xl">Performance</p>
       <div>
         <p className="text-lg font-semibold text-[#44475B]">Fundamentals</p>

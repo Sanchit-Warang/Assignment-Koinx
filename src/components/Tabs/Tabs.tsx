@@ -5,29 +5,74 @@ import AboutTab from './AboutTab'
 import TeamTab from './TeamTab'
 import TokenomicsTab from './TokenomicsTab'
 import { CryptoData } from '@/types'
+
 const Tabs = ({ coin }: { coin: CryptoData }) => {
   const [tab, setTab] = useState<string>('performance')
+  const tabClickHandler = (selectedTab: string) => {
+    setTab(selectedTab)
+  }
   return (
     <>
-      <div className="mt-2 flex items-center  border-b-2  justify-between">
-        <p className="font-semibold px-0 py-3 text-blue-500 border-blue-500 border-b-2">
+      <div className="mt-2 flex items-center  border-b-2  justify-between cursor-pointer">
+        <p
+          className={`font-semibold px-0 py-3 text-[#3E424A] ${
+            tab === 'performance'
+              ? 'text-blue-500 border-blue-500 border-b-2'
+              : ''
+          }`}
+          onClick={() => tabClickHandler('performance')}
+        >
           Overview
         </p>
-        <p className="font-semibold px-0 py-3 text-[#3E424A] ">Fundamentals</p>
-        <p className="font-semibold px-0 py-3 text-[#3E424A] ">News Insights</p>
-        <p className="font-semibold px-0 py-3 text-[#3E424A]">Sentiments</p>
-        <p className="font-semibold px-0 py-3 text-[#3E424A]">Team</p>
+
+        <p
+          className={`font-semibold px-0 py-3 text-[#3E424A] ${
+            tab === 'about' ? 'text-blue-500 border-blue-500 border-b-2' : ''
+          }`}
+          onClick={() => tabClickHandler('about')}
+        >
+          News
+        </p>
+        <p
+          className={`font-semibold px-0 py-3 text-[#3E424A] ${
+            tab === 'semtiments'
+              ? 'text-blue-500 border-blue-500 border-b-2'
+              : ''
+          }`}
+          onClick={() => tabClickHandler('semtiments')}
+        >
+          Sentiments
+        </p>
+        <p
+          className={`font-semibold px-0 py-3 text-[#3E424A] ${
+            tab === 'team' ? 'text-blue-500 border-blue-500 border-b-2' : ''
+          }`}
+          onClick={() => tabClickHandler('team')}
+        >
+          Team
+        </p>
+
+        <p
+          className={`font-semibold px-0 py-3 text-[#3E424A] ${
+            tab === 'tokenomics'
+              ? 'text-blue-500 border-blue-500 border-b-2'
+              : ''
+          }`}
+          onClick={() => tabClickHandler('tokenomics')}
+        >
+          Tokenomics
+        </p>
+        <p className="font-semibold px-0 py-3 text-[#3E424A] hidden md:block">
+          Fundamentals
+        </p>
         <p className="font-semibold px-0 py-3 text-[#3E424A] hidden md:block">
           Technicals
         </p>
-        <p className="font-semibold px-0 py-3 text-[#3E424A] hidden md:block">
-          Tokenomics
-        </p>
       </div>
-      <PerformanceTab coin={coin} />
-      <AboutTab coinName={coin.name} />
-      <TeamTab />
-      <TokenomicsTab />
+        {tab === 'performance' && <PerformanceTab coin={coin} />}
+        {tab === 'about' && <AboutTab coinName={coin.name} />}
+        {tab === 'team' && <TeamTab />}
+        {tab === 'tokenomics' && <TokenomicsTab />}
     </>
   )
 }

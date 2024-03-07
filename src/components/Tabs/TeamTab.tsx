@@ -2,7 +2,7 @@ import Card from '../ui/card'
 
 const TeamTab = () => {
   return (
-    <Card className="mt-5 space-y-5">
+    <Card className="mt-5 space-y-5 animate-in slide-in-from-left duration-300">
       <p className="font-semibold text-2xl">Team</p>
       <div className="space-y-5">
         <p>
@@ -13,7 +13,7 @@ const TeamTab = () => {
         </p>
         <Member name="John Smith" />
         <Member name="Elina Williams" />
-        <Member name="John Doe" />
+        <Member name="Jane Dill" />
       </div>
     </Card>
   )
@@ -46,6 +46,5 @@ const Member = ({ name }: { name: string }) => {
     </div>
   )
 }
-
 
 export default TeamTab

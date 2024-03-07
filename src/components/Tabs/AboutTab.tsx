@@ -4,7 +4,7 @@ import Arrow from '../Logo/Arrow'
 import Image from 'next/image'
 const AboutTab = ({ coinName }: { coinName: string }) => {
   return (
-    <Card className="mt-5 space-y-5">
+    <Card className="mt-5 space-y-5 animate-in slide-in-from-left duration-300">
       <p className="font-semibold text-2xl">About {coinName}</p>
       <div className="space-y-5 border-b-2 pb-3">
         <p className="font-bold text-lg">What is {coinName}?</p>
@@ -81,9 +81,10 @@ const CalculateCard = ({ variant }: { variant: 1 | 2 }) => {
           <Image
             className="rounded-lg"
             src={link}
-            width={190}
-            height={190}
+            width={200}
+            height={200}
             alt={'phone'}
+            objectFit="cover"
           />
         </div>
         <div className="col-span-4 space-y-8">

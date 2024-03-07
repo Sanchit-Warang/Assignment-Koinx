@@ -1,7 +1,7 @@
 import Card from '../ui/card'
 const TokenomicsTab = () => {
   return (
-    <Card className="mt-5 space-y-5">
+    <Card className="mt-5 space-y-5 animate-in slide-in-from-left duration-300">
       <p className="font-semibold text-2xl">Tokenomics</p>
       <div className="space-y-2">
         <p className="font-semibold text-xl">Initial Distribution</p>
