@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import PerformanceTab from './PerformanceTab'
 import AboutTab from './AboutTab'
+import TeamTab from './TeamTab'
 import { CryptoData } from '@/types'
 import TeamTab from './TeamTab'
 const Tabs = ({ coin }: { coin: CryptoData }) => {

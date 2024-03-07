@@ -45,7 +45,7 @@ function TradingViewWidget({
   }, [interval, symbol, h, w])
 
   return (
-    <div style={{ height: h, width: w }}>
+    <div className={cn('w-full')} style={{ height: h }}>
       <div
         className={cn('tradingview-widget-container', className)}
         ref={container}
