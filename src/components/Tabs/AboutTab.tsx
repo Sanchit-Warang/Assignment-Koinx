@@ -79,10 +79,10 @@ const CalculateCard = ({ variant }: { variant: 1 | 2 }) => {
       <div className="grid grid-cols-7 gap-3">
         <div className="col-span-3">
           <Image
-            className="rounded-lg"
+            className="rounded-lg h-[128px] w-[128px]"
             src={link}
-            width={200}
-            height={200}
+            width={128}
+            height={128}
             alt={'phone'}
             objectFit="cover"
           />

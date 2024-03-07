@@ -4,6 +4,7 @@ import PerformanceTab from './PerformanceTab'
 import AboutTab from './AboutTab'
 import TeamTab from './TeamTab'
 import TokenomicsTab from './TokenomicsTab'
+import SentimentsTab from './SentimentsTab'
 import { CryptoData } from '@/types'
 
 const Tabs = ({ coin }: { coin: CryptoData }) => {
@@ -35,11 +36,11 @@ const Tabs = ({ coin }: { coin: CryptoData }) => {
         </p>
         <p
           className={`font-semibold px-0 py-3 text-[#3E424A] ${
-            tab === 'semtiments'
+            tab === 'sentiments'
               ? 'text-blue-500 border-blue-500 border-b-2'
               : ''
           }`}
-          onClick={() => tabClickHandler('semtiments')}
+          onClick={() => tabClickHandler('sentiments')}
         >
           Sentiments
         </p>
@@ -69,10 +70,11 @@ const Tabs = ({ coin }: { coin: CryptoData }) => {
           Technicals
         </p>
       </div>
-        {tab === 'performance' && <PerformanceTab coin={coin} />}
-        {tab === 'about' && <AboutTab coinName={coin.name} />}
-        {tab === 'team' && <TeamTab />}
-        {tab === 'tokenomics' && <TokenomicsTab />}
+      {tab === 'performance' && <PerformanceTab coin={coin} />}
+      {tab === 'about' && <AboutTab coinName={coin.name} />}
+      {tab === 'team' && <TeamTab />}
+      {tab === 'tokenomics' && <TokenomicsTab />}
+      {tab === 'sentiments' && <SentimentsTab />}
     </>
   )
 }

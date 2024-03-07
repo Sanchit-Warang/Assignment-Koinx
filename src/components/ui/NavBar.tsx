@@ -6,8 +6,8 @@ import { useState } from 'react'
 const NavBar = () => {
   const [open, setOpen] = useState(false)
   return (
-    <>
-      <header className="sticky top-0 w-full shadow-md bg-white h-[8vh] flex items-center border-borderr border-b px-10 justify-between">
+    <header className='sticky z-40 top-0'>
+      <header className=" w-full shadow-md bg-white h-[8vh] flex items-center border-borderr border-b px-10 justify-between">
         <KoinXLogo />
         <nav className="hidden md:block">
           <ul className="space-x-5 flex items-center font-semibold">
@@ -26,7 +26,7 @@ const NavBar = () => {
         </div>
       </header>
       {open && (
-        <div className="absolute z-10 bg-white w-full flex justify-center animate-in slide-in-from-top duration-300 animate-out slide-out-from-left duration-300">
+        <div className="absolute z-50  bg-white w-full flex justify-center animate-in slide-in-from-top duration-300 animate-out slide-out-from-left duration-300">
           <ul className="font-semibold space-y-2 my-3 divide-y-2 w-full">
             <center>
               <li className="py-1">Crypto Taxes</li>
@@ -47,7 +47,7 @@ const NavBar = () => {
           </ul>
         </div>
       )}
-    </>
+    </header>
   )
 }
 export default NavBar
