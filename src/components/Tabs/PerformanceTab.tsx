@@ -1,6 +1,7 @@
 import { CryptoData } from '@/types'
 import Card from '../ui/card'
-
+import { cn } from '@/lib/utils'
+import { formatDateWithApproxYears } from '@/lib/utils'
 const PerformanceTab = ({ coin }: { coin: CryptoData }) => {
   return (
     <Card className="mt-5 space-y-5">
@@ -34,14 +35,58 @@ const PerformanceTab = ({ coin }: { coin: CryptoData }) => {
             />
             <ListItem field={`Market Cap Dominance`} value={`38.343%`} />
             <ListItem field={`Volume / Market Cap`} value={`0.0718`} />
-            <ListItem
-              field={`All-Time High`}
-              value={`$ ${coin.market_data.current_price.usd}`}
-            />
-            <ListItem
-              field={`All-Time Low`}
-              value={`$ ${coin.market_data.current_price.usd}`}
-            />
+            <div className="flex items-center justify-between border-b-2 py-4">
+              <p className="font-medium text-sm text-[#768396]">
+                All-Time High
+              </p>
+              <div className="text-sm font-medium flex-col ">
+                <div className="text-center">
+                  <p className="space-x-2 ">
+                    <span>$ {coin.market_data.ath.usd}</span>
+                    <span
+                      className={cn(
+                        '',
+                        coin.market_data.ath_change_percentage.usd < 0
+                          ? 'text-red-500'
+                          : 'text-green-500'
+                      )}
+                    >
+                      {coin.market_data.ath_change_percentage.usd.toFixed(2)}%
+                    </span>
+                  </p>
+                </div>
+                <div className="font-normal text-xs">
+                  <p>
+                    {formatDateWithApproxYears(coin.market_data.ath_date.usd)}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-between border-b-2 py-4">
+              <p className="font-medium text-sm text-[#768396]">All-Time Low</p>
+              <div className="text-sm font-medium flex-col ">
+                <div className="text-center">
+                  <p className="space-x-2 ">
+                    <span>$ {coin.market_data.atl.usd}</span>
+                    <span
+                      className={cn(
+                        '',
+                        coin.market_data.atl_change_percentage.usd < 0
+                          ? 'text-red-500'
+                          : 'text-green-500'
+                      )}
+                    >
+                      {coin.market_data.atl_change_percentage.usd.toFixed(2)}%
+                    </span>
+                  </p>
+                </div>
+                <div className="font-normal text-xs">
+                  <p>
+                    {formatDateWithApproxYears(coin.market_data.atl_date.usd)}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
