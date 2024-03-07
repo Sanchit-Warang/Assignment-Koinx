@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import PerformanceTab from './PerformanceTab'
 import AboutTab from './AboutTab'
+import TeamTab from './TeamTab'
 import { CryptoData } from '@/types'
 const Tabs = ({ coin }: { coin: CryptoData }) => {
   const [tab, setTab] = useState<string>('performance')
@@ -24,6 +25,7 @@ const Tabs = ({ coin }: { coin: CryptoData }) => {
       </div>
       <PerformanceTab coin={coin} />
       <AboutTab coinName={coin.name} />
+      <TeamTab />
     </>
   )
 }
