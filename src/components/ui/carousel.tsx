@@ -1,4 +1,5 @@
-import { Children, useRef } from 'react'
+'use client'
+import { useRef } from 'react'
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
 const Carousel = ({ children }: { children: React.ReactNode }) => {
   const showsRef = useRef<HTMLDivElement>(null)
@@ -22,14 +23,14 @@ const Carousel = ({ children }: { children: React.ReactNode }) => {
     <div className="group relative   flex items-center">
       <div
         onClick={() => scrollToDirection('left')}
-        className="btn-scroll-right mx-2 flex items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[30] "
+        className="btn-scroll-right mx-2 flex items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[30] border-2 "
       >
-        <FaChevronLeft className="text-[15px]"></FaChevronLeft>
+        <FaChevronLeft className="text-[15px] "></FaChevronLeft>
       </div>
 
       <div
         onClick={() => scrollToDirection('right')}
-        className="btn-scroll-right mx-2 flex items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[30] right-0"
+        className="btn-scroll-right mx-2 flex items-center justify-center rounded-full bg-white  cursor-pointer  font-bold text-xl h-[30px] w-[30px]  absolute z-[30] right-0 border-2"
       >
         <FaChevronRight className=""></FaChevronRight>
       </div>

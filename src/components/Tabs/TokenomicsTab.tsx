@@ -1,10 +1,16 @@
 import Card from '../ui/card'
+import DoughnutGraph from '../Logo/DoughnutGraph'
+import DoughnutDetails from '../Logo/DoughnutDetails'
 const TokenomicsTab = () => {
   return (
     <Card className="mt-5 space-y-5 animate-in slide-in-from-left duration-300">
       <p className="font-semibold text-2xl">Tokenomics</p>
       <div className="space-y-2">
         <p className="font-semibold text-xl">Initial Distribution</p>
+        <div className="flex items-center gap-3">
+          <DoughnutGraph />
+          <DoughnutDetails />
+        </div>
         <p className="font-medium text-[#3E424A]">
           Lorem ipsum dolor sit amet consectetur. Cras aliquet tristique ornare
           vestibulum nunc dignissim vel consequat. Leo etiam nascetur bibendum

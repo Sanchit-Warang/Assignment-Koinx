@@ -70,11 +70,11 @@ const Tabs = ({ coin }: { coin: CryptoData }) => {
           Technicals
         </p>
       </div>
-      {tab === 'performance' && <PerformanceTab coin={coin} />}
-      {tab === 'about' && <AboutTab coinName={coin.name} />}
-      {tab === 'team' && <TeamTab />}
-      {tab === 'tokenomics' && <TokenomicsTab />}
-      {tab === 'sentiments' && <SentimentsTab />}
+      {<PerformanceTab coin={coin} />}
+      {<AboutTab coinName={coin.name} />}
+      {<TeamTab />}
+      {<TokenomicsTab />}
+      {<SentimentsTab />}
     </>
   )
 }

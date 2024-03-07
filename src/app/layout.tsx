@@ -4,6 +4,7 @@ import './globals.css'
 import NavBar from '@/components/ui/NavBar'
 import GetStartedCard from '@/components/RightContent/GetStartedCard'
 import TrendingCoins from '@/components/RightContent/TrendingCoins'
+import Footer from '@/components/Footer'
 import Providers from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,6 +31,7 @@ export default function RootLayout({
               <TrendingCoins />
             </div>
           </div>
+          <Footer />
         </Providers>
       </body>
     </html>
